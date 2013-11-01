@@ -13,7 +13,7 @@ function HeaderController($scope, $location, Global) {
     },
     {
         "title": "Functions",
-        "link": "articles/create"
+        "link": "functions"
     },
     {
         title:"Views",

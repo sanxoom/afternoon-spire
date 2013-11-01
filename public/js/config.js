@@ -2,6 +2,9 @@
 window.app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
+        when('/functions', {
+            templateUrl: 'views/functions/view.html'
+        }).
         when('/articles', {
             templateUrl: 'views/articles/list.html'
         }).
@@ -15,7 +18,7 @@ window.app.config(['$routeProvider',
             templateUrl: 'views/articles/view.html'
         }).
         when('/', {
-            templateUrl: 'views/index.html'
+            templateUrl: 'views/view.html'
         }).
         otherwise({
             redirectTo: '/'
