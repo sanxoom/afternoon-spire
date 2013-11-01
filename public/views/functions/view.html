@@ -1,3 +1,7 @@
 <section data-ng-controller="functionsController">
- This is tab
+    <ul id="functionTab" class="nav nav-tabs">
+        <li ng-tw-tab data-ng-repeat="item in tabs" data-ng-class="{active: $first}">
+            <a data-toggle="tab" href="javascript:void(0)">{{item.name}}</a>
+        </li>
+    </ul>
 </section>
