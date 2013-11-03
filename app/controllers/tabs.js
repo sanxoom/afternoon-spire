@@ -23,3 +23,12 @@ exports.all = function(req, res) {
         }
     });
 };
+
+/**
+ * Create a article
+ */
+exports.create = function(req, res) {
+    var tab = new Tab(req.body);
+    tab.save();
+    res.jsonp(tab);
+};

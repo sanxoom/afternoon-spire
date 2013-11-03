@@ -65,6 +65,7 @@ module.exports = function(app, passport, auth) {
     //functions Routes
     var tabs = require('../app/controllers/tabs');
     app.get('/tabs', tabs.all);
+    app.post('/tabs' , tabs.create);
 
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);
