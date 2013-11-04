@@ -6,7 +6,7 @@ module.exports = {
         db: 'mongodb://admin:mun2ball@paulo.mongohq.com:10018/app17710669',
         root: rootPath,
         app: {
-            name: 'MEAN - A Modern Stack - Development'
+            name: 'Afternoon - Spire'
         },
         facebook: {
             clientID: "APP_ID",
