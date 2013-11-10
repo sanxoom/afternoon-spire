@@ -1,9 +1,23 @@
 <section data-ng-controller="functionsController">
     <ul id="functionTab" class="nav nav-tabs">
-        <li ng-tw-tab data-ng-repeat="item in tabs" data-ng-class="{active: $first}">
+        <li ng-tw-tab data-ng-repeat="item in userTabs" data-ng-class="{active: $first}">
             <a data-toggle="tab" href="javascript:void(0)">{{item.name}}</a>
         </li>
-        <li data-ng-show="IsAddTabButtonVisible"> <a data-toggle="tab" href="javascript:void(0)" ng-click="addTab()">Add</a></li>
-        <li data-ng-show="!IsAddTabButtonVisible"><span class="span6"><input type="text" id="newTabTxt" data-ng-model="newTabName">&nbsp;<input type="button" value="save" ng-click="saveTab()" ></span></li>
+        <li class="dropdown">
+            <a id="drop4" data-toggle="dropdown" role="button">option</a>
+                <div id="tabMenu" class="dropdown-menu" role="menu" aria-labelledby="drop4" onclick="event.stopPropagation();">
+                    <div>
+                        <b>Show Tabs</b>
+                    </div>
+                    <div data-ng-repeat="item in menuTabs">
+                        <label>&nbsp;&nbsp;&nbsp;<input type="checkbox" data-ng-model="item.isSelected"/> {{item.name}}</label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary" data-toggle="button" ng-click="dropdownOk()">Ok</button>
+                        <button type="button" class="btn btn-primary" data-toggle="button" ng-click="dropdownCancel()">Cancel</button>
+                    </div>
+                </div>
+        </li>
+
     </ul>
 </section>
