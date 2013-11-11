@@ -14,11 +14,6 @@ function functionsController($scope, $routeParams, $location, Global, tabService
             $scope.tabs = tabs;
             $scope.userTabs = _.where(tabs, {user : "*"});
             $scope.menuTabs = _.where(tabs, {optional : true});
-
-           // angular.forEach($scope.menuTabs, function(menuTab, key)
-           // {
-             //   menuTab.isSelected = true;
-           // });
         });
     };
 
