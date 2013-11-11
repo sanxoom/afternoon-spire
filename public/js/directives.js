@@ -10,9 +10,9 @@ window.app.directive("ngTwTab", function() {
 
 .directive("ngNotification", function($rootScope) {
     return function(scope, element, attrs) {
-        $rootScope.$on('notification-received', function(currentScope, msg)
+        $rootScope.$on('notification-information-received', function(currentScope, msg)
         {
-            $(element).find(".alert").html(msg);
+            $(element).find(".alert").prepend(msg);
         });
     }
 });

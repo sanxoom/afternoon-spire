@@ -8,7 +8,7 @@ window.app.factory("notificationService", function($rootScope) {
     return  {
         information : function(msg)
             {
-                $rootScope.$broadcast('notification-received', msg);
+                $rootScope.$broadcast('notification-information-received', msg);
             }
     };
 });
