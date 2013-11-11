@@ -6,4 +6,13 @@ window.app.directive("ngTwTab", function() {
             $(this).addClass('active');
         });
     }
+})
+
+.directive("ngNotification", function($rootScope) {
+    return function(scope, element, attrs) {
+        $rootScope.$on('notification-received', function(currentScope, msg)
+        {
+            $(element).find(".alert").html(msg);
+        });
+    }
 });

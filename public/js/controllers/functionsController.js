@@ -2,7 +2,7 @@
  * Created by Mizan on 11/1/13.
  */
 
-function functionsController($scope, $routeParams, $location, Global, tabService) {
+function functionsController($scope, $routeParams, $location, Global, tabService, notificationService) {
 
     $scope.IsAddTabButtonVisible = true;
     $scope.userTabs = [];
@@ -18,6 +18,8 @@ function functionsController($scope, $routeParams, $location, Global, tabService
     };
 
     showTabs();
+
+    notificationService.information('this is test');
 
     $scope.addTab = function()
     {
