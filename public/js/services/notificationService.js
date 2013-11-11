@@ -9,7 +9,11 @@ window.app.factory("notificationService", function($rootScope) {
         information : function(msg)
             {
                 $rootScope.$broadcast('notification-information-received', msg);
-            }
+            },
+        error:function(msg)
+        {
+            $rootScope.$broadcast('notification-error-received', msg);
+        }
     };
 });
 

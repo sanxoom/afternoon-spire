@@ -19,7 +19,15 @@ function functionsController($scope, $routeParams, $location, Global, tabService
 
     showTabs();
 
-    notificationService.information('this is test');
+    $scope.showInformation =  function()
+    {
+        notificationService.information('this is information');
+    }
+
+    $scope.showInError = function()
+    {
+        notificationService.error('this is information');
+    }
 
     $scope.addTab = function()
     {

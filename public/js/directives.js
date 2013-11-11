@@ -12,7 +12,12 @@ window.app.directive("ngTwTab", function() {
     return function(scope, element, attrs) {
         $rootScope.$on('notification-information-received', function(currentScope, msg)
         {
-            $(element).find(".alert").prepend(msg);
+            element.append('<div class="alert alert-info">' + msg + '<button type="button" class="close" data-dismiss="alert">×</button></div>');
+        });
+
+        $rootScope.$on('notification-error-received', function(currentScope, msg)
+        {
+            element.append('<div class="alert alert-error">' + msg + '<button type="button" class="close" data-dismiss="alert">×</button></div>');
         });
     }
 });
