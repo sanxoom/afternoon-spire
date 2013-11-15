@@ -1,3 +1,4 @@
+
 <section data-ng-controller="functionsController">
     <ul id="functionTab" class="nav nav-tabs">
         <li ng-tw-tab data-ng-repeat="item in userTabs" data-ng-class="{active: $first}">
@@ -23,5 +24,8 @@
     <div>
         <input type="button"  ng-click="showInformation()" value="Information">
         <input type="button"  ng-click="showInError()" value="Error">
+    </div>
+    <div>
+        <div class="gridStyle" ng-grid="gridOptions"></div>
     </div>
 </section>
