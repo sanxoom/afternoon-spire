@@ -2,7 +2,8 @@
  * Created by Mizan on 11/1/13.
  */
 
-function functionsController($scope, $routeParams, $location, Global, tabService, notificationService) {
+function functionsController($scope, $routeParams, $location, Global, tabService, notificationService,
+                             tabTableService, tabTableDataService) {
 
     $scope.IsAddTabButtonVisible = true;
     $scope.userTabs = [];
@@ -16,6 +17,22 @@ function functionsController($scope, $routeParams, $location, Global, tabService
             $scope.menuTabs = _.where(tabs, {optional : true});
         });
     };
+
+    tabTableService.query(function(tables)
+    {
+        $scope.tables = tables;
+
+        console.log('tables');
+        console.log($scope.tables);
+    });
+
+    tabTableDataService.query(function(tabTableData)
+    {
+       $scope.tableData = tabTableData;
+
+        console.log('table data');
+        console.log(tabTableData);
+    });
 
     showTabs();
 
@@ -95,13 +112,14 @@ function functionsController($scope, $routeParams, $location, Global, tabService
         {name: "Jacob", age: 27},
         {name: "Nephi", age: 29},{name: "Jacob", age: 27},
         {name: "Nephi", age: 29},
-
-
-
         {name: "Enos", age: 34}];
+
     $scope.gridOptions = {
         data: 'myData',
         showGroupPanel: true
     };
+
+
+
 
 }

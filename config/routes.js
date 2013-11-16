@@ -69,12 +69,13 @@ module.exports = function(app, passport, auth) {
 
 
     //Tab tables
-    var tabTables = require('../app/controllers/tabTables');
-    app.get('/tabTables', tabTables.all);
+    var tables = require('../app/controllers/tables');
+    app.get('/tables', tables.all);
+    //app.post('/tabTable', tables.create);
 
     //Table table data
-    var tabTableData = require('../app/controllers/tabTableData');
-    app.get('/tabTableData', tabTableData.all);
+    var tableDatas = require('../app/controllers/tableDatas');
+    app.get('/tableData', tableDatas.all);
 
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);

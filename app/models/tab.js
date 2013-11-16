@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /**
- * Article Schema
+ * Tab Schema
  */
 var TabSchema = new Schema({
     name: {

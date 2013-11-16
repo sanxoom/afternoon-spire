@@ -1,7 +1,6 @@
 /**
- * Created by Mizan on 11/16/13.
+ * Created by User on 11/1/13.
  */
-
 /**
  * Module dependencies.
  */
@@ -13,16 +12,18 @@ var mongoose = require('mongoose'),
 /**
  * Article Schema
  */
-var TabTableDataSchema = new Schema({
-    tableName: String,
-    columnName:String,
-    type: String
+var TableSchema = new Schema({
+    tableName: {
+        type: String,
+        default: '',
+        trim: true
+    }
 });
 
 /**
  * Statics
  */
-TabTableDataSchema.statics = {
+TableSchema.statics = {
     load: function(id, cb) {
         this.findOne({
             _id: id
@@ -30,4 +31,4 @@ TabTableDataSchema.statics = {
     }
 };
 
-mongoose.model('TabTableData', TabTableDataSchema);
+mongoose.model('Table', TableSchema);

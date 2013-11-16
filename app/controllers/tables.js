@@ -6,29 +6,29 @@
  */
 var mongoose = require('mongoose'),
     async = require('async'),
-    Tab = mongoose.model('TabTableData'),
+    Table = mongoose.model('Table'),
     _ = require('underscore');
 
 /**
- * List of tabtable data
+ * List of Articles
  */
 exports.all = function(req, res) {
-    Tab.find().exec(function(err, tabTableData) {
+    Table.find().exec(function(err, tables) {
         if (err) {
             res.render('error', {
                 status: 500
             });
         } else {
-            res.jsonp(tabTableData);
+            res.jsonp(tables);
         }
     });
 };
 
 /**
- * Create a TabTable
+ * Create a article
  */
 exports.create = function(req, res) {
-    var tab = new Tab(req.body);
-    tab.save();
-    res.jsonp(tab);
+    var table = new Table(req.body);
+    table.save();
+    res.jsonp(table);
 };
