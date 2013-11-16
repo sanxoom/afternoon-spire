@@ -20,4 +20,22 @@ window.app.directive("ngTwTab", function() {
             element.append('<div class="alert alert-error">' + msg + '<button type="button" class="close" data-dismiss="alert">×</button></div>');
         });
     }
-});
+})
+.directive("ngCustomFixedGridHeader", function()
+    {
+        return function(scope, element, attrs) {
+            var eTop = $(element).offset().top;
+            $(window).scroll(function(e)
+            {
+                var elementTop = eTop - $(window).scrollTop();
+                if(elementTop<=0)
+                {
+                    $(element).find(".ngTopPanel").addClass("top-fixed-header")
+                }
+                else
+                {
+                    $(element).find(".ngTopPanel").removeClass("top-fixed-header")
+                }
+            });
+        };
+    });

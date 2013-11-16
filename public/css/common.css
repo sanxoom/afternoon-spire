@@ -32,5 +32,11 @@ footer p {
 .gridStyle {
     border: 1px solid rgb(212,212,212);
     width: 500px;
-    height: 300px;
+    height: 1000px;
+}
+
+.top-fixed-header
+{
+    position: fixed !important;
+    top:0 !important;
 }
