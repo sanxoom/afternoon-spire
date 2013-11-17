@@ -3,7 +3,7 @@
  */
 
 function functionsController($scope, $routeParams, $location, Global, tabService, notificationService,
-                             tabTableService, tabTableDataService) {
+                             tableService, tableDataService) {
 
     $scope.IsAddTabButtonVisible = true;
     $scope.userTabs = [];
@@ -18,20 +18,19 @@ function functionsController($scope, $routeParams, $location, Global, tabService
         });
     };
 
-    tabTableService.query(function(tables)
+    tableDataService.query(function(tableData)
     {
-        $scope.tables = tables;
+        $scope.gridData = tableData;
 
-        console.log('tables');
-        console.log($scope.tables);
+        console.log('grid data');
+        console.log($scope.gridData);
     });
 
-    tabTableDataService.query(function(tabTableData)
+    tableService.query(function(tables)
     {
-       $scope.tableData = tabTableData;
-
+       $scope.tables = tables;
         console.log('table data');
-        console.log(tabTableData);
+        console.log(tables);
     });
 
     showTabs();
@@ -115,11 +114,9 @@ function functionsController($scope, $routeParams, $location, Global, tabService
         {name: "Enos", age: 34}];
 
     $scope.gridOptions = {
-        data: 'myData',
-        showGroupPanel: true
+        data: 'gridData',
+        showGroupPanel: true,
+        showSelectionCheckbox:true,
+        columnDefs: [{ field: 'requirement', displayName: 'Requirement', width: 200, cellTemplate: '<div>{{row.entity[col.field]}}</div>' }]
     };
-
-
-
-
 }
