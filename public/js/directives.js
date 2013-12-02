@@ -39,7 +39,7 @@ window.app.directive("ngTwTab", function() {
             });
         };
     })
-.directive("editCell", function()
+.directive("ngCustomEditCell", function()
     {
         return function(scope, element, attrs) {
             $(element).bind("click",function()

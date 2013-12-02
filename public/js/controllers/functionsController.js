@@ -119,6 +119,6 @@ function functionsController($scope, $routeParams, $location, Global, tabService
         showGroupPanel: true,
         showSelectionCheckbox:true,
         enableRowSelection: false,
-        columnDefs: [{ field: 'requirement', headerCellTemplate:headerTemplate, displayName: 'Requirement', width: 200, cellTemplate: '<div>{{row.entity[col.field]}}&nbsp;&nbsp;<span edit-cell ng-click="editCell(this)">Edit</span></div>' }]
+        columnDefs: [{ field: 'requirement', headerCellTemplate:headerTemplate, displayName: 'Requirement', width: 200, cellTemplate: '<div>{{row.entity[col.field]}}&nbsp;&nbsp;<span ng-custom-edit-cell ng-click="editCell(this)">Edit</span></div>' }]
     };
 }
