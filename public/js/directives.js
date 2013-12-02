@@ -38,4 +38,20 @@ window.app.directive("ngTwTab", function() {
                 }
             });
         };
+    })
+.directive("editCell", function()
+    {
+        return function(scope, element, attrs) {
+            $(element).bind("click",function()
+            {
+                $(element).parents(".ngCell").css("overflow", "visible");
+                $(element).parent('div').remove(".edit-cell").append("<div class='edit-cell'><input type='text'/><span onclick='closeEdit()'>close</span></div>");
+                $(".edit-cell span").bind("click", closeEdit);
+            });
+
+            function closeEdit()
+            {
+                $(".edit-cell").remove();
+            }
+        };
     });

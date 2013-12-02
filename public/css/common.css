@@ -31,7 +31,7 @@ footer p {
 
 .gridStyle {
     border: 1px solid rgb(212,212,212);
-    width: 500px;
+    width: 1000px;
     height: 1000px;
 }
 
@@ -39,4 +39,14 @@ footer p {
 {
     position: fixed !important;
     top:0 !important;
+}
+
+.edit-cell
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding:20px;
+    background-color: #49afcd;
+    z-index: 1000;
 }

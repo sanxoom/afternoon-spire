@@ -113,10 +113,12 @@ function functionsController($scope, $routeParams, $location, Global, tabService
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
 
+    var headerTemplate = '<div class="ngHeaderSortColumn {{col.headerClass}}" ng-style="{\'cursor\': col.cursor}" ng-class="{ \'ngSorted\': !noSortVisible }"><div ng-click="col.sort($event)" ng-class="\'colt\' + col.index" class="ngHeaderText">{{col.displayName}}&nbsp;&nbsp;<span title="{{col.displayName}}">?</span></div><div class="ngSortButtonDown" ng-show="col.showSortButtonDown()"></div><div class="ngSortButtonUp" ng-show="col.showSortButtonUp()"></div><div class="ngSortPriority">{{col.sortPriority}}</div><div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable"></div></div><div ng-show="col.resizable" class="ngHeaderGrip" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div>';
     $scope.gridOptions = {
         data: 'gridData',
         showGroupPanel: true,
         showSelectionCheckbox:true,
-        columnDefs: [{ field: 'requirement', displayName: 'Requirement', width: 200, cellTemplate: '<div>{{row.entity[col.field]}}</div>' }]
+        enableRowSelection: false,
+        columnDefs: [{ field: 'requirement', headerCellTemplate:headerTemplate, displayName: 'Requirement', width: 200, cellTemplate: '<div>{{row.entity[col.field]}}&nbsp;&nbsp;<span edit-cell ng-click="editCell(this)">Edit</span></div>' }]
     };
 }
