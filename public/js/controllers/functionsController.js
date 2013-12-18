@@ -34,7 +34,6 @@ function functionsController($scope, $routeParams, $location, Global, tabService
     });
 
     showTabs();
-
     $scope.showInformation =  function()
     {
         notificationService.information('this is information');
@@ -122,3 +121,4 @@ function functionsController($scope, $routeParams, $location, Global, tabService
         columnDefs: [{ field: 'requirement', headerCellTemplate:headerTemplate, displayName: 'Requirement', width: 200, cellTemplate: '<div>{{row.entity[col.field]}}&nbsp;&nbsp;<span ng-custom-edit-cell ng-click="editCell(this)">Edit</span></div>' }]
     };
 }
+
